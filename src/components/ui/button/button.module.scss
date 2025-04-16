@@ -1,10 +1,163 @@
-@import '@/styles/main.scss';
+@import "../../../styles/main.scss";
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-icon {
+  animation: spin 1s linear infinite;
+}
 
 .button {
+  @include rounded($rounded-md);
+  @include text-base(); 
+  @include font-medium();
   display: inline-flex;
   align-items: center;
   gap: .5rem;
-  font-weight: bold;
-  border-radius: $rouded-md;
+
+  transition: 0.15s ease-in-out;
+  cursor: pointer;
+  border: none;
+
+  &--primary {
+    background-color: $neutral-900;
+  color: $white;
+  border: none;
+
+  &:hover {
+    background-color: $neutral-800;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  }
+
+  &--secondary {
+    background-color: $neutral-200;
+    color: $neutral-900;
   
+    &:hover {
+      background-color: $neutral-200;
+    }
+  
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+
+  &--ghost {
+    background-color: transparent;
+    color: $neutral-900;
+    border: none;
+  
+    &:hover {
+      background-color: $neutral-100;
+    }
+  
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+  
+  &--success {
+    background-color: $green-600;
+    color: $white;
+    border: none;
+  
+    &:hover {
+      background-color: $green-700;
+    }
+  
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+
+  &--outline {
+    background-color: transparent;
+  border: 2px solid $neutral-300;
+  color: inherit;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  }
+  
+  
+&--destructive {
+  background-color: $red-600;
+  color: $white;
+  border: none;
+
+  &:hover {
+    background-color: $red-700;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+  &--loading {
+    background-color: transparent;
+    color: $neutral-900;
+    border: none;
+
+    opacity: 0.6;
+      cursor: not-allowed;
+  
+    &:hover {
+      background-color: $neutral-100;
+    }
+  }
+
+  &--sm {
+    @include text-sm();
+    padding: 0.25rem 0.75rem;
+  }
+
+  &--base {
+    @include text-base();
+    padding: 0.5rem 1rem;
+  }
+
+  &--lg {
+    @include text-lg();
+    padding: 0.75rem 1.25rem;
+  }
+
+  &--xl {
+    @include text-xl();
+    padding: 0.875rem 1.5rem
+  }
+
+  &--2xl {
+    padding: 1rem 1.75rem;       
+    @include text-2xl();
+
+  }
+
+  &--3xl {
+    padding: 1.25rem 2rem;       
+    @include text-3xl(); 
+  }
+
+  &--4xl {
+    padding: 1.5rem 2.5rem;      
+    @include text-4xl();
+  }
 }

@@ -5,13 +5,13 @@ type ButtonVariants =
 	| 'secondary'
 	| 'ghost'
 	| 'outline'
-	| 'sucess'
-	| 'desctructive'
+	| 'success'
+	| 'destructive'
 
 type ButtonSizes = 'sm' | 'base' | 'lg' | 'xl'
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-	children: ReactNode
+	children?: ReactNode
 	size?: ButtonSizes
 	icon?: JSX.Element
 	variant?: ButtonVariants

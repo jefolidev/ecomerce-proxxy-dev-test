@@ -2,6 +2,8 @@ import type { ButtonProps } from './types'
 
 import { CircleNotch } from '@phosphor-icons/react'
 
+import styles from './button.module.scss'
+
 export function Button({
 	children,
 	loading = false,
@@ -12,9 +14,12 @@ export function Button({
 }: ButtonProps) {
 	return (
 		<>
-			<button type={type} className="button">
-				{loading ? <CircleNotch /> : icon}
-				{children}
+			<button
+				type={type}
+				className={`${styles.button} ${styles[`button--${variant}`]} ${styles[`button--${size}`]}  ${loading ? styles['button--loading'] : ''} `}
+			>
+				{loading ? <CircleNotch className={styles['loading-icon']} /> : icon}
+				{loading ? '' : children}
 			</button>
 		</>
 	)

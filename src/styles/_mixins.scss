@@ -1,0 +1,3 @@
+@mixin rounded($radius: row) {
+  border-radius: $radius;
+}

@@ -17,7 +17,8 @@
     "react-dom": "^19.0.0",
     "react-router": "^7.5.0",
     "sass": "^1.86.3",
-    "sass-migrator": "^2.3.1"
+    "sass-migrator": "^2.3.1",
+    "zod": "^3.24.3"
   },
   "devDependencies": {
     "@types/react": "^19.0.10",

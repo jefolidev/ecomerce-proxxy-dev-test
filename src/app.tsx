@@ -20,6 +20,7 @@ export function App() {
 				<Input type="email" placeholder="Insira seu nome" size="base" />
 				<Input type="email" placeholder="Insira seu nome" size="lg" />
 			</div>
+
 		</>
 	)
 }

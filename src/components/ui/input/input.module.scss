@@ -1,0 +1,47 @@
+@import "../../../styles/main.scss";
+
+.input {
+  @include rounded($rounded-md);
+  
+  &--text, &--email, &--password{
+  background-color: transparent;
+  border: 2px solid $neutral-300;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.06);
+  
+  &::placeholder {
+    font-family: "Inter";
+  }
+
+  &:hover {
+    border:  2.2px solid $neutral-400;
+  }
+
+  &:focus {
+    outline: none;
+    border:  2.2px solid $neutral-400;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }}
+
+  &--sm {
+    @include text-sm();
+    padding: 0.25rem 0.5rem; 
+  }
+
+  &--base {
+    @include text-base();
+    padding: 0.5rem 0.875rem;
+  }
+
+  &--lg {
+    @include text-lg();
+    padding: 0.75rem 1.275rem;
+  }
+
+  &--fullWidth {
+    width: 100%;
+  } 
+}

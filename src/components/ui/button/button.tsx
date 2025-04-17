@@ -11,12 +11,14 @@ export function Button({
 	type,
 	icon,
 	size = 'base',
+	...rest
 }: ButtonProps) {
 	return (
 		<>
 			<button
 				type={type}
 				className={`${styles.button} ${styles[`button--${variant}`]} ${styles[`button--${size}`]}  ${loading ? styles['button--loading'] : ''} `}
+				{...rest}
 			>
 				{loading ? <CircleNotch className={styles['loading-icon']} /> : icon}
 				{loading ? '' : children}
